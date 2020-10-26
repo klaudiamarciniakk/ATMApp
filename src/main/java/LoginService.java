@@ -69,7 +69,7 @@ public class LoginService {
                 login();
             } else {
                 System.out.println("Login correct!");
-                //ATMService.menu(accountManager, login);
+                ATMService.menu(accountManager, login);
             }
         }
     }

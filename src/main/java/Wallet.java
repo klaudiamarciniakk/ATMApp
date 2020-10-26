@@ -7,6 +7,7 @@ public class Wallet {
     }
 
     public Wallet() {
+        this.cash = 0;
     }
 
     public double getCash() {

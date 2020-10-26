@@ -1,10 +1,9 @@
-/*
 import java.util.Scanner;
 
 public class ATMService {
     public static void menu(AccountManager accountManager, String login) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("what do you want to do " + login + " ?");
+        System.out.println("What do you want to do " + login + " ?");
         System.out.println("1. Add cash");
         System.out.println("2. Check your balance");
         System.out.println("3. Get some cash");
@@ -12,9 +11,11 @@ public class ATMService {
         String x = scanner.nextLine();
         if (x.equals("1")) {
             System.out.println("How many?");
-            int cash = Integer.parseInt(scanner.nextLine());
-            accountManager.list.get(accountManager.search(login)).wallet.setCash(accountManager.list.get(accountManager.search(login)).wallet.getCash() + cash);
-            System.out.println("Added! You now have : " + accountManager.list.get(accountManager.search(login)).wallet.getCash());
+            int cash = scanner.nextInt();
+            scanner.nextLine();
+            Account account = accountManager.list.get(accountManager.search(login));
+            account.wallet.setCash(account.wallet.getCash() + cash);
+            System.out.println("Added! You now have : " + account.wallet.getCash());
             menu(accountManager, login);
         } else if (x.equals("2")) {
             System.out.println("Your balance is : " + accountManager.list.get(accountManager.search(login)).wallet.getCash());
@@ -26,7 +27,7 @@ public class ATMService {
                 System.out.println("You dont have enough cash");
                 menu(accountManager, login);
             } else {
-                //accountManager.list.get(accountManager.search(login)).wallet.setCash(accountManager.list.get(accountManager.search(login)).wallet.getCash() - cash);
+                accountManager.list.get(accountManager.search(login)).wallet.setCash(accountManager.list.get(accountManager.search(login)).wallet.getCash() - cash);
                 System.out.println("Now you have your cash in hands!");
                 menu(accountManager, login);
             }
@@ -37,4 +38,3 @@ public class ATMService {
     }
 
 }
-*/

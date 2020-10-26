@@ -16,6 +16,7 @@ public class Account {
     public Account(String login, String pass) {
         this.login = login;
         this.pass = pass;
+        this.wallet = new Wallet();
 
     }
 
